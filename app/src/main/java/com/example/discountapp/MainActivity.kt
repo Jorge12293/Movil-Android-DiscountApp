@@ -12,6 +12,7 @@ import com.example.discountapp.navigation.NavManager
 import com.example.discountapp.ui.theme.DiscountAppTheme
 import com.example.discountapp.viewModels.CalculateViewModel1
 import com.example.discountapp.viewModels.CalculateViewModel2
+import com.example.discountapp.viewModels.CalculateViewModel3
 import com.example.discountapp.views.HomeView
 
 class MainActivity : ComponentActivity() {
@@ -19,13 +20,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         val viewModel1: CalculateViewModel1 by viewModels();
         val viewModel2: CalculateViewModel2 by viewModels();
+        val viewModel3: CalculateViewModel3 by viewModels();
         setContent {
             DiscountAppTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    NavManager(viewModel1=viewModel1,viewModel2=viewModel2)
+                    NavManager(viewModel1=viewModel1,viewModel2=viewModel2,viewModel3=viewModel3)
                 }
             }
 
