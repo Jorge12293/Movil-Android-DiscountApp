@@ -11,19 +11,21 @@ import androidx.compose.ui.Modifier
 import com.example.discountapp.navigation.NavManager
 import com.example.discountapp.ui.theme.DiscountAppTheme
 import com.example.discountapp.viewModels.CalculateViewModel1
+import com.example.discountapp.viewModels.CalculateViewModel2
 import com.example.discountapp.views.HomeView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val viewModel: CalculateViewModel1 by viewModels();
+        val viewModel1: CalculateViewModel1 by viewModels();
+        val viewModel2: CalculateViewModel2 by viewModels();
         setContent {
             DiscountAppTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    NavManager(viewModel1=viewModel)
+                    NavManager(viewModel1=viewModel1,viewModel2=viewModel2)
                 }
             }
 
